@@ -25,5 +25,11 @@ router.get('/staff', (request, response) => {
     response.send(utils.createResult(error, result))
   })
 })
+router.get('/type', (request, response) => {
+  const query = `select * from feedback_type`
+  db.query(query, (error, result) => {
+    response.send(utils.createResult(error, result))
+  })
+})
 
 module.exports = router
