@@ -19,4 +19,11 @@ router.get("/course/:cid", (request, response) => {
   })
 })
 
+router.get('/staff', (request, response) => {
+  const query = `select * from employee`
+  db.query(query, (error, result) => {
+    response.send(utils.createResult(error, result))
+  })
+})
+
 module.exports = router

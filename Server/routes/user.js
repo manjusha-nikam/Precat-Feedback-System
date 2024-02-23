@@ -4,12 +4,7 @@ const db = require('../db')
 const utils = require('../utils')
 
 
-router.get('/all', (request, response) => {
-  const query = `select * from employee`
-  db.query(query, (error, result) => {
-    response.send(utils.createResult(error, result))
-  })
-})
+
 
 router.post('/signin', (request, response) => {
   const { email, password } = request.body
