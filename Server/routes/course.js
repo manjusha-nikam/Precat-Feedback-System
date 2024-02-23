@@ -6,8 +6,16 @@ const utils = require('../utils')
 
 router.get('/', (request, response) => {
     const query = `select * from course`
-    db.query(query, (error, result) => {
-      response.send(utils.createResult(error, result))
+    db.query(query, (error, course) => {
+      response.send(utils.createResult(error, course))
+    })
+  })
+
+  router.get('/course/:cid', (request, response) => {
+    const { cid } = request.params
+    const query = `select * from course_module where course_id =${cid}`
+    db.query(query, (error, course) => {
+      response.send(utils.createResult(error, course))
     })
   })
 
