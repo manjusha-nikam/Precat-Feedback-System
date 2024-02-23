@@ -1,0 +1,6 @@
+insert into students(FirstName,LastName,email,password,mobile) 
+values
+("Ajinkya","Pawade","pawadeajinkya09@gmail.com","ajinkya123",9970881504),
+("Akshay","Bendale","bendaleakshay@gmail.com","askshay123",8007698738),
+("Radhika","Patil","patilradha021@gmail.com","radhika123",9021302141),
+("Mayuri","Dhone","mayurirajendradhone@gmail.com","mayuri123",9552697875);
