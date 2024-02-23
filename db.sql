@@ -128,5 +128,31 @@ CREATE TABLE schedule(
     type_id INT,
     staff_id INT,
     fromDate DATE,
-    tillDate DATE
+    tillDate DATE,
+    FOREIGN KEY(course_id) REFERENCES course(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(course_group_id) REFERENCES course_group(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(type_id) REFERENCES feedback_type(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(module_id) REFERENCES module(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(staff_id) REFERENCES employee(empid) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE TABLE filled_feedback(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    question_id INT,
+    rating INT,
+    schedule_id INT,
+    FOREIGN KEY(question_id) REFERENCES question(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(schedule_id) REFERENCES schedule(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+SELECT * FROM course;
+SELECT * FROM course_group;
+SELECT * FROM course_module;
+SELECT * FROM course_student;
+SELECT * FROM employee;
+SELECT * FROM feedback_type;
+SELECT * FROM module;
+SELECT * FROM question;
+SELECT * FROM schedule;
+SELECT * FROM student;
