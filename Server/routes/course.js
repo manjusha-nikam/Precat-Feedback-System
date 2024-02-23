@@ -13,6 +13,7 @@ router.get('/', (request, response) => {
 
   router.get('/course/:cid', (request, response) => {
     const { cid } = request.params
+    console.log(cid)
     const query = `select * from course_module where course_id =${cid}`
     db.query(query, (error, course) => {
       response.send(utils.createResult(error, course))
