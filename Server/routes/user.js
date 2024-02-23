@@ -13,7 +13,7 @@ router.get('/all', (request, response) => {
 
 router.post('/signin', (request, response) => {
   const { email, password } = request.body
-
+console.log(email,password)
   // encrypt the password
   // const encryptedPassword = cryptoJs.MD5(password)
 

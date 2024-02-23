@@ -8,10 +8,12 @@ app.use(bodyParser.json())
 
 // routers
 const routerUser = require('./routes/user')
+const routercourse = require('./routes/course')
 
 
 // add the routers
 app.use('/user', routerUser)
+app.use('/course', routercourse)
 
 
 // static routing
@@ -19,6 +21,6 @@ app.use('/user', routerUser)
 // express will simply return any file from uploads directory
 app.use(express.static('uploads'))
 
-app.listen(4000, '0.0.0.0', () => {
+app.listen(4000, '0.0.0.0' ,() => {
   console.log('server started on port 4000')
 })
