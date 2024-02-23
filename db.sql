@@ -112,3 +112,13 @@ CREATE TABLE question(
     question TEXT
 );
 
+insert into question(question)
+values("Was the lab well-organized and structured?"),
+("Were the objectives of the lab clearly stated?"),
+("How would you rate the organization and structure of the lab?"),
+("How would you rate the difficulty level of the lab?"),
+("How satisfied were you with the support materials and resources provided during the theory session?"),
+("How well do you feel you understood the theoretical concepts presented?"),
+("How engaged were you during the theoretical session?"),
+("How relevant did you find the theoretical content to the topic being discussed?");
+
