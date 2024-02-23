@@ -1,6 +1,9 @@
 import axios from "axios"
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router'
+import { URL } from '../config'
 
 const Signin = () =>{
     const [email, setEmail] = useState('')
@@ -21,9 +24,12 @@ const Signin = () =>{
               password,
             }
       
+            console.log(email,password)
             // url to make signin api call
+            console.log(URL)
             const url = `${URL}/user/signin`
       
+            console.log(url)
             // make api call using axios
             axios.post(url, body).then((response) => {
               // get the server result

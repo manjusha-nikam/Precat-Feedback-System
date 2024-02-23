@@ -9,11 +9,15 @@ app.use(bodyParser.json())
 // routers
 const routerUser = require('./routes/user')
 const routercourse = require('./routes/course')
+const routerfeedback = require('./routes/feedback')
+const routerstudent = require('./routes/student')
 
 
 // add the routers
 app.use('/user', routerUser)
 app.use('/course', routercourse)
+app.use('/feedback', routerfeedback)
+app.use('/student', routerstudent)
 
 
 // static routing

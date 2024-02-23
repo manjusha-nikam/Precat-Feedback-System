@@ -8,11 +8,11 @@ const utils = require('../utils')
 
 router.post('/signin', (request, response) => {
   const { email, password } = request.body
-console.log(email,password)
+console.log("studentlogin"+email,password)
   // encrypt the password
   // const encryptedPassword = cryptoJs.MD5(password)
 
-  const query = `select empid, firstName, lastName, email, mobile from employee where email = '${email}' and password = '${password}'`
+  const query = `select id, firstName, lastName, email, mobile from student where email = '${email}' and password = '${password}'`
 
   db.query(query, (error, users) => {
     if (error) {
