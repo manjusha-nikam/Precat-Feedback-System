@@ -3,4 +3,16 @@ values
 ("Ajinkya","Pawade","pawadeajinkya09@gmail.com","ajinkya123",9970881504),
 ("Akshay","Bendale","bendaleakshay@gmail.com","askshay123",8007698738),
 ("Radhika","Patil","patilradha021@gmail.com","radhika123",9021302141),
-("Mayuri","Dhone","mayurirajendradhone@gmail.com","mayuri123",9552697875);
+("Mayuri","Dhone","mayurirajendradhone@gmail.com","mayuri123",9552697875),
+("Rhutuja","Salve","rhutu17salave@gmail.com","rutu123",8805586075),
+("Rutuja","Jadhav"."rutum12jadhav@gmail.com","rutuja123",9730341924),
+("Ruchita","Kakade","ruchitakakade202@gmail.com","ruchita123",7709402252),
+("Sanket","Wagh","sanketwagh3921@gmail.com","sanket123",7972657464),
+("Aboli","Kulkarni","alpanaaboli@gmail.com","aboli123",8378847522),
+("Disha","Tribhuvan","dishatribhuvan20@gmail.com","disha123",8177878032),
+("Darshana","Bavaskar","darshanabhavsar2001@gmail.com","darshana123",9156323922),
+("Anup","Sarode","anupsarode09@gmail.com","anup123",8956356504),
+("Dhanraj","Patil","dhanrajpatil2642001@gmail.com","dhanraj123",8698191623),
+("Adarsh","Pal","paladarsh1130@gmail.com","adarsh123",8208645540),
+("Suyash","Sanas","suyash.sanas2912@gmail.com","suyash123",9545434352),
+("Shubham","Javeri","shubhamjaveri13@gmail.com","shubham123",7385727895);
