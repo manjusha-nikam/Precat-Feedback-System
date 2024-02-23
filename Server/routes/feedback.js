@@ -22,4 +22,15 @@ router.get('/schedule', (request, response) => {
     })
   })
 
+  router.post('/submitfeedback',  (request, response) => {
+    const { question_id,rating, schedule_id} = request.body
+  
+    // get the uploaded file name
+    const query = `insert into filled_feedback (question_id,rating,schedule_id) values ('${question_id}', '${rating}', '${schedule_id}')`
+    db.query(query, (error, songs) => {
+      response.send(utils.createResult(error, songs))
+    })
+  })
+
+
   module.exports = router

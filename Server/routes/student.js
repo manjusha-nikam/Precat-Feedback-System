@@ -8,7 +8,7 @@ const utils = require('../utils')
 
 router.post('/signin', (request, response) => {
   const { email, password } = request.body
-console.log(email,password)
+console.log("studentlogin"+email,password)
   // encrypt the password
   // const encryptedPassword = cryptoJs.MD5(password)
 
