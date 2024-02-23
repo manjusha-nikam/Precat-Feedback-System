@@ -16,3 +16,14 @@ values
 ("Adarsh","Pal","paladarsh1130@gmail.com","adarsh123",8208645540),
 ("Suyash","Sanas","suyash.sanas2912@gmail.com","suyash123",9545434352),
 ("Shubham","Javeri","shubhamjaveri13@gmail.com","shubham123",7385727895);
+
+insert into Question(Question)
+values("Was the lab well-organized and structured?
+"),("Were the objectives of the lab clearly stated?
+"),("How would you rate the organization and structure of the lab?
+"),("How would you rate the difficulty level of the lab?
+"),("How satisfied were you with the support materials and resources provided during the theory session?
+"),("How well do you feel you understood the theoretical concepts presented?
+"),("How engaged were you during the theoretical session?
+"),("How relevant did you find the theoretical content to the topic being discussed?
+");
