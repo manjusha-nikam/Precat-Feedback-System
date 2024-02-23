@@ -17,6 +17,7 @@ INSERT INTO employee VALUES
 (189,"Samruddhi","Phadnis","samruddhi.phadnis@sunbeaminfo.com","9876543210","sun@189"),
 (227,"Sonal","Shinde","sonal.shinde@sunbeaminfo.com","8987643784","sun@227");
 
+
 CREATE TABLE student(
     id INT PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(20),
@@ -54,6 +55,13 @@ INSERT INTO course(courseName) VALUES
 ("IIT-01-CPP"),
 ("CJ-O-13"),
 ("CJ-H-02");
+
+CREATE TABLE course_student(
+    course_id INT,
+    student_id INT,
+    FOREIGN KEY(course_id) REFERENCES course(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(student_id) REFERENCES student(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
 
 CREATE TABLE module(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -112,13 +120,39 @@ CREATE TABLE question(
     question TEXT
 );
 
-insert into question(question)
-values("Was the lab well-organized and structured?"),
-("Were the objectives of the lab clearly stated?"),
-("How would you rate the organization and structure of the lab?"),
-("How would you rate the difficulty level of the lab?"),
-("How satisfied were you with the support materials and resources provided during the theory session?"),
-("How well do you feel you understood the theoretical concepts presented?"),
-("How engaged were you during the theoretical session?"),
-("How relevant did you find the theoretical content to the topic being discussed?");
+CREATE TABLE schedule(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    course_id INT,
+    course_group_id INT,
+    module_id INT,
+    type_id INT,
+    staff_id INT,
+    fromDate DATE,
+    tillDate DATE,
+    FOREIGN KEY(course_id) REFERENCES course(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(course_group_id) REFERENCES course_group(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(type_id) REFERENCES feedback_type(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(module_id) REFERENCES module(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(staff_id) REFERENCES employee(empid) ON DELETE CASCADE ON UPDATE CASCADE
+);
 
+CREATE TABLE filled_feedback(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    question_id INT,
+    rating INT,
+    schedule_id INT,
+    FOREIGN KEY(question_id) REFERENCES question(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(schedule_id) REFERENCES schedule(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+SELECT * FROM course;
+SELECT * FROM course_group;
+SELECT * FROM course_module;
+SELECT * FROM course_student;
+SELECT * FROM employee;
+SELECT * FROM feedback_type;
+SELECT * FROM module;
+SELECT * FROM question;
+SELECT * FROM schedule;
+SELECT * FROM student;
