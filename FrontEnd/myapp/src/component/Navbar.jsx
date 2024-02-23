@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux'
+//import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
 export function Navbar() {
   const navigate = useNavigate()
 
   // get a selector
-  const cart = useSelector((state) => state.cart)
+  //const cart = useSelector((state) => state.cart)
 
   const onLogout = () => {
     sessionStorage.removeItem('token')
@@ -23,12 +23,13 @@ export function Navbar() {
               </Link>
             </li>
             <li>
-              <Link className='nav-link' aria-current='page' to='/cart'>
-                Cart ({cart.items.length})
+              <Link className='nav-link' aria-current='page' to='/home'>
+                {/* Cart ({cart.items.length}) */}
+                Cart
               </Link>
             </li>
             <li>
-              <Link className='nav-link' aria-current='page' to='/orders'>
+              <Link className='nav-link' aria-current='page' to='/home'>
                 Orders
               </Link>
             </li>

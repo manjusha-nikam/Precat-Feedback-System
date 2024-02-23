@@ -1,9 +1,19 @@
+import Navbar from '../../component/Navbar'
 
 
 const Home = () =>{
 
     return(
-        <h1>list of schedule feedback</h1>
+        <>
+         <Navbar />
+         
+         <h6>list of schedule feedback</h6>
+            
+        </>
+        
+        
+        
+        
     )
 
 }
