@@ -32,4 +32,11 @@ router.get('/type', (request, response) => {
   })
 })
 
+router.get('/group', (request, response) => {
+  const query = `select * from course_group; `
+  db.query(query, (error, result) => {
+    response.send(utils.createResult(error, result))
+  })
+})
+
 module.exports = router
