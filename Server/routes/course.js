@@ -3,12 +3,14 @@ const router = express.Router()
 const db = require("../db")
 const utils = require("../utils")
 
-router.get("/", (request, response) => {
-  const query = `select * from course`
+router.get("/courses", (request, response) => {
+  const query = `select courseName from course`
   db.query(query, (error, course) => {
     response.send(utils.createResult(error, course))
   })
 })
+
+
 
 
 router.get("/course/:cid", (request, response) => {
@@ -38,5 +40,7 @@ router.get('/group', (request, response) => {
     response.send(utils.createResult(error, result))
   })
 })
+
+
 
 module.exports = router
