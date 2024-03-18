@@ -118,9 +118,16 @@ CREATE TABLE question(
     id INT PRIMARY KEY AUTO_INCREMENT,
     question TEXT
     type_id INT
-
-  FOREIGN KEY(type_id) REFERENCES feedback_type(id) ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY(type_id) REFERENCES feedback_type(id) ON DELETE CASCADE ON UPDATE CASCADE,
 );
+
+CREATE TABLE question(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    question TEXT,
+    type_id INT,
+    FOREIGN KEY(type_id) REFERENCES feedback_type(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 
 CREATE TABLE schedule(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -146,6 +153,8 @@ CREATE TABLE filled_feedback(
     FOREIGN KEY(question_id) REFERENCES question(id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(schedule_id) REFERENCES schedule(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+INSERT INTO filled_feedback VALUES 
+(1,1,4,1);
 
 
 SELECT * FROM course;

@@ -6,17 +6,19 @@ const utils = require("../utils")
 
 router.post('/',  (request, response) => {
     const { course_id, course_group_id, module_id, type_id,staff_id,fromDate, tillDate} = request.body
-  
+  console.log(course_id)
    
+    
     const query = `insert into schedule (course_id , course_group_id , module_id, type_id ,staff_id,fromDate, tillDate) values ('${course_id}', '${course_group_id}', '${module_id}', '${type_id}', '${staff_id}', '${fromDate}', '${tillDate}')`
-    db.query(query, (error, songs) => {
-      response.send(utils.createResult(error, songs))
+   console.log(query)
+    db.query(query, (error, result) => {
+      response.send(utils.createResult(error, result))
     })
   })
 
   
 router.get('/schedule', (request, response) => {
-    const query = `select c.courseName,cg.groupName,m.moduleName,f.type,e.firstName, s.fromDate,s.tillDate from course c 
+    const query = `select s.id, c.courseName,cg.groupName,m.moduleName,f.type,e.firstName, s.fromDate,s.tillDate from course c 
     inner join schedule s on c.id =s.course_id
     inner join course_group cg on cg.id = s.course_group_id 
     inner join module m on m.id = s.module_id inner join feedback_type f on f.id = s.type_id 

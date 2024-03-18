@@ -48,7 +48,7 @@ const Signin = () =>{
                 sessionStorage['loginStatus'] = 1
       
                 // navigate to home component
-                navigate('/home')
+                navigate('/list')
               } else {
                 toast.error('Invalid user name or password')
               }

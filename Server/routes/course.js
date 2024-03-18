@@ -4,12 +4,18 @@ const db = require("../db")
 const utils = require("../utils")
 
 router.get("/courses", (request, response) => {
-  const query = `select courseName from course`
+  const query = `select * from course`
   db.query(query, (error, course) => {
     response.send(utils.createResult(error, course))
   })
 })
 
+router.get("/modules", (request, response) => {
+  const query = `select * from module`
+  db.query(query, (error, module) => {
+    response.send(utils.createResult(error, module))
+  })
+})
 
 
 
