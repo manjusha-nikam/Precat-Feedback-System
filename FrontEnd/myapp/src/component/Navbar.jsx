@@ -1,4 +1,38 @@
-//import { useSelector } from 'react-redux'
+// import React from 'react'
+// import './Navbar.css'
+// import { Link } from 'react-router-dom'
+// //import add_product_icon from '../../assets/add-product.png'
+// //import list_product_icon from '../../assets/list_product_icon.png'
+
+// const Navbar = () => {
+//   return (
+//     <div className='sideBar'>
+//         <Link to={'/addproduct'} style={{textDecoration:"none"}}>
+//             <div className='sidebar-item'>
+//                 {/* <img src={add_product_icon} /> */}
+//                 <p>Hmoe</p>
+//             </div>
+//         </Link>
+//         <Link to={'/listProducts'} style={{textDecoration:"none"}}>
+//             <div className='sidebar-item'>
+//                 {/* <img src={list_product_icon} /> */}
+//                 <p>Schduled Feedback</p>
+//             </div>
+//         </Link>
+//         <Link to={'/listProducts'} style={{textDecoration:"none"}}>
+//             <div className='sidebar-item'>
+//                 {/* <img src={list_product_icon} /> */}
+//                 <p>Feedback Filled</p>
+//             </div>
+//         </Link>
+//     </div>
+//   )
+// }
+
+// export default Navbar
+
+
+import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
 export function Navbar() {
@@ -14,32 +48,23 @@ export function Navbar() {
 
   return (
    <>
-   <div>
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">FeedBack-Schedule</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                        <li className='nav-item'>
-              <Link className='nav-link' aria-current='page' to='/home'>
-                Home
-              </Link>
-            </li>
-                        </a>
-                    </li>
-                    <li>
-              <Link className='nav-link' aria-current='page' to='/schedulefb'>
-                {/* Cart ({cart.items.length}) */}
-                Feedback
+  <nav className='navbar navbar-expand-lg  bg-primary' data-bs-theme='dark'>
+      <div className='container-fluid'>
+        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li className='nav-item'>
+              <Link className='nav-link' aria-current='page' to='/list'>
+                List-Schedule-Feedback
               </Link>
             </li>
             <li>
-              <Link className='nav-link' aria-current='page' to='/home'>
-                Orders
+              <Link className='nav-link' aria-current='page' to='/ScheduleFB'>
+                Scheduled-Feedback 
+              </Link>
+            </li>
+            <li>
+              <Link className='nav-link' aria-current='page' to='/filledfeedback'>
+                List-Of-Filled-Feedback
               </Link>
             </li>
             <li>
@@ -51,12 +76,10 @@ export function Navbar() {
                 Logout
               </button>
             </li>
-                    </ul>
-                 </div>
-                 </div>
-                 </div>
-                 </div>   
-    
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 
    </>

@@ -13,7 +13,7 @@ console.log(email,password)
   // const encryptedPassword = cryptoJs.MD5(password)
 
   const query = `select empid, firstName, lastName, email, mobile from employee where email = '${email}' and password = '${password}'`
-
+console.log(query)
   db.query(query, (error, users) => {
     if (error) {
       // when there is an error from MySQL side
