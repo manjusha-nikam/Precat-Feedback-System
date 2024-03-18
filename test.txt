@@ -17,13 +17,89 @@ values
 ("Suyash","Sanas","suyash.sanas2912@gmail.com","suyash123",9545434352),
 ("Shubham","Javeri","shubhamjaveri13@gmail.com","shubham123",7385727895);
 
-insert into Question(Question)
-values("Was the lab well-organized and structured?
-"),("Were the objectives of the lab clearly stated?
-"),("How would you rate the organization and structure of the lab?
+insert into question values(1,"Was the lab well-organized and structured?
+",1),(2,"Were the objectives of the lab clearly stated?
+",1),("How would you rate the organization and structure of the lab?
 "),("How would you rate the difficulty level of the lab?
 "),("How satisfied were you with the support materials and resources provided during the theory session?
-"),("How well do you feel you understood the theoretical concepts presented?
-"),("How engaged were you during the theoretical session?
-"),("How relevant did you find the theoretical content to the topic being discussed?
+"),(3,"How well do you feel you understood the theoretical concepts presented?
+",2),(4,"How engaged were you during the theoretical session?
+",2),("How relevant did you find the theoretical content to the topic being discussed?
 ");
+
+insert into feedback_type values((1,"lab"),(2,"theory"));
+
+CREATE TABLE feedback_type(
+    id INT,
+    type VARCHAR(80)
+);
+
+CREATE TABLE question(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    question TEXT,
+    type_id INT,
+
+  FOREIGN KEY(type_id) REFERENCES feedback_tyape(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+insert into question values(1,"Was the lab well-organized and structured?
+",1),(2,"Were the objectives of the lab clearly stated?
+",1),(3,"How well do you feel you understood the theoretical concepts presented?
+",2),(4,"How engaged were you during the theoretical session?
+",2);
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:padding="16dp"-->
+<!--    tools:context=".activity.MainActivity">-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner_options"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="16dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/question_text_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Question"-->
+<!--        android:textSize="18sp"-->
+<!--        android:layout_below="@id/spinner_options"-->
+<!--        android:layout_marginBottom="16dp" />-->
+
+<!--    <RatingBar-->
+<!--        android:id="@+id/rating_bar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/question_text_view"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:numStars="4"-->
+<!--        android:stepSize="1"-->
+<!--        android:rating="0" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/submit_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Submit"-->
+<!--        android:layout_below="@id/rating_bar"-->
+<!--        android:onClick="onSubmitButtonClick" />-->
+
+<!--</RelativeLayout>-->
+
+
+
+
+
+
+
